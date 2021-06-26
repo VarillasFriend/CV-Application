@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-import Input from "./Input";
+import General from "./General";
+import Education from "./Education";
+import Experience from "./Experience";
 
 class CV extends Component {
     render() {
         return (
             <div className="CV">
-                <Input default="Name" tag="h1" />
-                <Input default="Email" tag="p" />
-                <Input default="Phone" tag="p" />
+                <General />
+                <Education />
+                <Experience />
             </div>
         );
     }

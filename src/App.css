@@ -1,11 +1,49 @@
+body {
+    background-color: #EEE;
+}
+
+.General, .Experience, .Education {
+    background-color: #FFF;
+    width: 50%;
+    margin: 1rem auto 1rem auto;
+    padding: 1rem;
+    border-radius: 0.2rem;
+}
+
+.flex {
+    display: flex;
+    margin: 0.2rem 0 0.2rem 4px;
+}
+
+input {
+    margin: 0.2rem 0 0.2rem 0;
+}
+
 .h1 {
     font-size: 2rem;
-    border: none;
-    outline: none;
 }
 
 .p {
     font-size: 1rem;
+}
+
+p {
+    margin: 0;
+}
+
+.date {
+    font-size: 1rem;
+    margin: 0;
     border: none;
+}
+
+.de-outline {
+    border-color: transparent;
     outline: none;
+}
+
+@media only screen and (max-width: 70rem) {
+    .General, .Experience, .Education {
+        width: 90%;
+    }
 }

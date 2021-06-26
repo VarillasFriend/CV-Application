@@ -17,10 +17,6 @@ class Input extends Component {
         });
     };
 
-    handleClick = (e) => {
-        e.target.classList.remove(this.props.tag);
-    };
-
     handleEnter = (e) => {
         if (e.keyCode === 13) {
             if (e.target.value !== "") {
@@ -33,18 +29,40 @@ class Input extends Component {
                 });
             }
 
-            e.target.classList.add(this.props.tag);
+            e.target.classList.add("de-outline");
+            e.target.blur();
         }
+    };
+
+    handleBlur = (e) => {
+        if (e.target.value !== "") {
+            this.setState({
+                content: e.target.value,
+            });
+        } else {
+            this.setState({
+                content: this.props.default,
+            });
+        }
+
+        e.target.classList.add("de-outline");
+        e.target.blur();
+    };
+
+    handleFocus = (e) => {
+        e.target.classList.remove("de-outline");
     };
 
     render() {
         return (
             <div className="Input">
                 <input
-                    className={this.props.tag}
-                    onClick={this.handleClick}
+                    type={this.props.tag === "date" ? "date" : ""}
+                    className={`${this.props.tag} de-outline`}
                     onInput={this.handleInput}
                     onKeyDown={this.handleEnter}
+                    onFocus={this.handleFocus}
+                    onBlur={this.handleBlur}
                     value={this.state.content}
                 />
             </div>
